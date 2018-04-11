@@ -1,3 +1,98 @@
+*
+  box-sizing border-box
+
 body
-  margin 0
-  padding 0
+  background #EBEBEB
+  margin 0 auto
+  //padding 0 20px
+
+.page
+  display flex
+  min-height 100vh
+
+  flex-direction column
+
+  &__header
+    border-top 1px solid #D9D9D9
+    h1
+      font-size 50px
+      text-align center
+
+
+  &__content
+    flex-grow 2
+    padding 0 20px
+    margin auto
+
+
+
+  &__footer
+    font-size 18px
+    height 64px
+    align-items center
+    display flex
+    justify-content space-between
+    padding 0 48px
+    border-top 1px solid #939393
+    border-bottom 1px solid #D9D9D9
+
+    &-address
+      color #4C5FAC
+      font-style normal
+
+
+.main
+  display flex
+
+  &__navigation
+    background #D9D9D9
+
+  &__content
+    padding 0 16px
+
+  &__sidebar
+    min-width 240px
+
+.navigation
+  &__list
+    list-style none
+    margin 0
+    padding 0
+  &__item
+    font-size 26px
+    box-shadow inset 0px -1px 0px 0px rgba(255,255,255,1);
+    border-top 1px solid #b8b8b8
+    height 62px
+    display flex
+    align-items center
+    padding 0 14px
+    white-space nowrap
+
+    &:hover
+      background #5A5A5A
+      color #fff
+
+
+.rating
+  background #D9D9D9
+  padding 0 14px
+
+  &__list
+    list-style none
+    margin 0
+    padding 0
+
+  &__title
+    color #C92C1F
+    text-transform uppercase
+    margin 0
+    font-size 28px
+    line-height 42px
+
+  &__control
+    text-align right
+
+  &__subtitle
+    font-size 26px
+    white-space nowrap
+
