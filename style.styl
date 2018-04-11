@@ -1,5 +1,6 @@
 *
   box-sizing border-box
+  font-family serif
 
 body
   background #EBEBEB
@@ -92,7 +93,17 @@ body
   &__control
     text-align right
 
+  &__pseudo
+    &:after
+      content '#'
+
   &__subtitle
     font-size 26px
     white-space nowrap
 
+   #rating
+    display none
+
+   #rating:checked
+     & ~ .rating__control > .rating__pseudo:after
+       content "@"

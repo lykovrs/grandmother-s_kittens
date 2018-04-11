@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: serif;
 }
 body {
   background: #ebebeb;
@@ -86,7 +87,16 @@ body {
 .rating__control {
   text-align: right;
 }
+.rating__pseudo:after {
+  content: '#';
+}
 .rating__subtitle {
   font-size: 26px;
   white-space: nowrap;
+}
+.rating #rating {
+  display: none;
+}
+.rating #rating:checked ~ .rating__control > .rating__pseudo:after {
+  content: "@";
 }
