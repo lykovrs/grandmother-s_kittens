@@ -68,10 +68,12 @@ body
     align-items center
     padding 0 14px
     white-space nowrap
+    transition background color 0.5s linear
 
     &:hover
       background #5A5A5A
       color #fff
+      cursor pointer
 
 
 .rating
@@ -81,7 +83,13 @@ body
   &__list
     list-style none
     margin 0
-    padding 0
+    padding 0 20px 0 0
+    display flex
+    flex-direction column
+    position relative
+
+    & > li
+      margin-bottom 10px
 
   &__title
     color #C92C1F
@@ -95,15 +103,119 @@ body
 
   &__pseudo
     &:after
-      content '#'
+      content '☐'
+      margin-left 5px
+      display inline-block
+      font-size 20px
+      vertical-align middle
 
   &__subtitle
     font-size 26px
     white-space nowrap
+
+  &__gradient
+    height 20px
+    background linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 100%)
+
+    i
+      position absolute
+      right 0
+
+    for num in (1..100)
+      li[data-rating={'"'+num+'"'}] &
+        width num+'%'
+
+    [data-rating="10"] &,
+    [data-rating="20"] &,
+    [data-rating="30"] &,
+    [data-rating="40"] &,
+    [data-rating="50"] &,
+    [data-rating="60"] &
+      background linear-gradient(to right, rgba(#D73527,1) 0%, rgba(255,255,255,1) 100%)
+
+    [data-rating="70"] &,
+    [data-rating="80"] &
+      background linear-gradient(to right, rgba(#FEF659,1) 0%, rgba(255,255,255,1) 100%)
+
+    [data-rating="90"] &,
+    [data-rating="100"] &
+      background linear-gradient(to right, rgba(#6AE37D,1) 0%, rgba(255,255,255,1) 100%)
 
    #rating
     display none
 
    #rating:checked
      & ~ .rating__control > .rating__pseudo:after
-       content "@"
+       content "☑"
+
+   #rating ~ .rating__list
+     for num in (1..10)
+       li[data-rating={'"'+num+'"'}]
+        order: num
+
+  #rating ~ .rating__list
+    transition flex-direction 4s
+    flex-direction column
+
+  #rating:checked ~ .rating__list
+    flex-direction column-reverse
+
+
+.grid
+  display grid
+  grid-template-columns 1fr 1fr 1fr
+  grid-template-areas "a b b" "c d f" "g g z" "h h h"
+  grid-gap 10px
+
+  div
+    background #fff
+    display flex
+    align-items center
+
+  &__h
+    grid-area h
+
+  &__b
+    grid-area b
+
+  &__a
+    grid-area a
+
+  &__g
+    grid-area g
+
+  &__z
+    grid-area z
+
+.figure
+  margin 0
+  position relative
+  display flex
+  align-items center
+  justify-content center
+  width 100%
+  height 100%
+
+  &__img
+    max-width 100%
+    margin auto
+    display block
+    min-height 150px
+    max-height 300px
+
+
+  &__caption
+    position absolute
+    left 0
+    top 50%
+    line-height 68px
+    margin-top -34px
+    background rgba(black .5)
+    color: #fff
+    font-size 34px
+    padding 0 10px
+    opacity  0
+    transition: opacity 0.5s linear;
+
+    .figure:hover &
+      opacity 1
