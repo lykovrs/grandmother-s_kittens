@@ -5,6 +5,7 @@
 body {
   background: #ebebeb;
   margin: 0 auto;
+  max-width: 1300px;
 }
 .page {
   display: flex;
@@ -486,28 +487,28 @@ li[data-rating="100"] .rating__gradient {
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas: "a b b" "c d f" "g g z" "h h h";
   grid-gap: 10px;
 }
-.grid div {
+.grid__item {
   background: #fff;
   display: flex;
   align-items: center;
 }
-.grid__h {
-  grid-area: h;
+.grid__item:nth-child(8n+1) {
+  grid-column-start: 1;
+  grid-column-end: 1;
 }
-.grid__b {
-  grid-area: b;
+.grid__item:nth-child(8n+2) {
+  grid-column-start: 2;
+  grid-column-end: 4;
 }
-.grid__a {
-  grid-area: a;
+.grid__item:nth-child(8n+6) {
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
-.grid__g {
-  grid-area: g;
-}
-.grid__z {
-  grid-area: z;
+.grid__item:nth-child(8n+8) {
+  grid-column-start: 1;
+  grid-column-end: 4;
 }
 .figure {
   margin: 0;
@@ -525,7 +526,8 @@ li[data-rating="100"] .rating__gradient {
   min-height: 150px;
   max-height: 300px;
 }
-.figure__caption {
+.figure:before {
+  content: attr(data-caption);
   position: absolute;
   left: 0;
   top: 50%;
@@ -538,7 +540,7 @@ li[data-rating="100"] .rating__gradient {
   opacity: 0;
   transition: opacity 0.5s linear;
 }
-.figure:hover .figure__caption {
+.figure:hover:before {
   opacity: 1;
 }
 #breed-1:checked ~ .main__content [data-breed="breed-1"],

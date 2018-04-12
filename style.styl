@@ -6,6 +6,7 @@
 body
   background #EBEBEB
   margin 0 auto
+  max-width 1300px
 
 //БАЗОВАЯ СТРАНИЦА
 .page
@@ -174,28 +175,28 @@ body
 .grid
   display grid
   grid-template-columns 1fr 1fr 1fr
-  grid-template-areas "a b b" "c d f" "g g z" "h h h"
   grid-gap 10px
 
-  div
+  &__item
     background #fff
     display flex
     align-items center
 
-  &__h
-    grid-area h
+    &:nth-child(8n+1)
+      grid-column-start: 1;
+      grid-column-end: 1;
 
-  &__b
-    grid-area b
+    &:nth-child(8n+2)
+      grid-column-start 2
+      grid-column-end 4
 
-  &__a
-    grid-area a
+    &:nth-child(8n+6)
+      grid-column-start 1
+      grid-column-end 3
 
-  &__g
-    grid-area g
-
-  &__z
-    grid-area z
+    &:nth-child(8n+8)
+      grid-column-start 1
+      grid-column-end 4
 
 //КАРТИНКА С ПОДПИСЬЮ
 .figure
@@ -215,7 +216,8 @@ body
     max-height 300px
 
 
-  &__caption
+  &:before
+    content attr(data-caption)
     position absolute
     left 0
     top 50%
@@ -228,7 +230,8 @@ body
     opacity  0
     transition: opacity 0.5s linear;
 
-    .figure:hover &
+  &:hover
+    &:before
       opacity 1
 
 //ЛОГИКА ВЫБОРА ПОРОДЫ
