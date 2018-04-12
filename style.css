@@ -54,7 +54,7 @@ body {
   margin: 0;
   padding: 0;
 }
-.navigation__item {
+.navigation__item label {
   font-size: 26px;
   box-shadow: inset 0px -1px 0px 0px #fff;
   border-top: 1px solid #b8b8b8;
@@ -65,10 +65,20 @@ body {
   white-space: nowrap;
   transition: background color 0.5s linear;
 }
-.navigation__item:hover {
+.navigation__item label:hover {
   background: #5a5a5a;
   color: #fff;
   cursor: pointer;
+}
+[name="breed"] {
+  display: none;
+}
+#breed-1:checked ~ .main__navigation [for="breed-1"],
+#breed-2:checked ~ .main__navigation [for="breed-2"],
+#breed-3:checked ~ .main__navigation [for="breed-3"],
+#breed-4:checked ~ .main__navigation [for="breed-4"] {
+  background: #5a5a5a;
+  color: #fff;
 }
 .rating {
   background: #d9d9d9;
@@ -530,4 +540,10 @@ li[data-rating="100"] .rating__gradient {
 }
 .figure:hover .figure__caption {
   opacity: 1;
+}
+#breed-1:checked ~ .main__content [data-breed="breed-1"],
+#breed-2:checked ~ .main__content [data-breed="breed-2"],
+#breed-3:checked ~ .main__content [data-breed="breed-3"],
+#breed-4:checked ~ .main__content [data-breed="breed-4"] {
+  opacity: 0.3;
 }

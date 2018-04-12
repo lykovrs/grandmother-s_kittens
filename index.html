@@ -10,66 +10,80 @@
         <h1>Бабуленькины котятки</h1>
     </header>
     <main class="page__content main">
+        <input name="breed" type="radio" id="breed-1">
+        <input name="breed" type="radio" id="breed-2">
+        <input name="breed" type="radio" id="breed-3">
+        <input name="breed" type="radio" id="breed-4">
         <nav class="main__navigation">
             <ul class="navigation__list">
-                <li class="navigation__item">Абиссинская</li>
-                <li class="navigation__item">Британская</li>
-                <li class="navigation__item">Русская голубая</li>
-                <li class="navigation__item">Сиамская</li>
+                <li class="navigation__item">
+                    <label for="breed-1">Абиссинская</label>
+                </li>
+                <li class="navigation__item">
+                    <label for="breed-2">Британская</label>
+                </li>
+                <li class="navigation__item">
+                    <label for="breed-3">Русская голубая</label>
+                </li>
+                <li class="navigation__item">
+                    <label for="breed-4">Сиамская</label>
+                </li>
             </ul>
         </nav>
 
         <section class="main__content grid">
             <div class="grid__a">
                 <figure class="figure">
-                    <img class="figure__img" src="imgs/fa123f58c1c49f74d35561cece71fa06.jpg" alt="">
+                    <img data-breed="breed-1" class="figure__img" src="imgs/fa123f58c1c49f74d35561cece71fa06.jpg" alt="">
                     <figcaption class="figure__caption">Котенька</figcaption>
                 </figure>
             </div>
 
             <div class="grid__b">
                 <figure class="figure">
-                    <img class="figure__img" src="imgs/Fotolia_14485377_Subscription_XL.jpg" alt="">
+                    <img data-breed="breed-2" class="figure__img" src="imgs/Fotolia_14485377_Subscription_XL.jpg" alt="">
                     <figcaption class="figure__caption">Котенька</figcaption>
                 </figure>
             </div>
 
             <div>
                 <figure class="figure">
-                    <img class="figure__img" src="imgs/30911461.jpg" alt="">
+                    <img data-breed="breed-3" class="figure__img" src="imgs/30911461.jpg" alt="">
                     <figcaption class="figure__caption">Котенька</figcaption>
                 </figure>
             </div>
             <div>
                 <figure class="figure">
-                    <img class="figure__img" src="imgs/images.jpeg" alt="">
+                    <img data-breed="breed-1" class="figure__img" src="imgs/images.jpeg" alt="">
                     <figcaption class="figure__caption">Котенька</figcaption>
                 </figure>
             </div>
             <div>
                 <figure class="figure">
-                    <img class="figure__img" src="imgs/depositphotos_12183602-stock-photo-cat-kitten-on-white-background.jpg" alt="">
+                    <img data-breed="breed-4" class="figure__img" src="imgs/depositphotos_12183602-stock-photo-cat-kitten-on-white-background.jpg" alt="">
                     <figcaption class="figure__caption">Котенька</figcaption>
                 </figure>
             </div>
             <div class="grid__g">
                 <figure class="figure">
-                    <img class="figure__img" src="imgs/kotenok-i-miska.jpg" alt="">
+                    <img data-breed="breed-2" class="figure__img" src="imgs/kotenok-i-miska.jpg" alt="">
                     <figcaption class="figure__caption">Котенька</figcaption>
                 </figure>
             </div>
             <div class="grid__z">
                 <figure class="figure">
-                    <img class="figure__img" src="imgs/1322437395_01.jpg" alt="">
+                    <img data-breed="breed-1" class="figure__img" src="imgs/1322437395_01.jpg" alt="">
                     <figcaption class="figure__caption">Котенька</figcaption>
                 </figure>
             </div>
             <div class="grid__h">
                 <figure class="figure">
-                    <img class="figure__img" src="imgs/kotenok_cheshet_uho.jpg" alt="">
+                    <img data-breed="breed-3" class="figure__img" src="imgs/kotenok_cheshet_uho.jpg" alt="">
                     <figcaption class="figure__caption">Котенька</figcaption>
                 </figure>
             </div>
+
+
         </section>
 
         <aside class="main__sidebar">

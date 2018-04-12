@@ -1,3 +1,4 @@
+//ОСНОВНАЯ РАЗМЕТКА
 *
   box-sizing border-box
   font-family serif
@@ -5,12 +6,11 @@
 body
   background #EBEBEB
   margin 0 auto
-  //padding 0 20px
 
+//БАЗОВАЯ СТРАНИЦА
 .page
   display flex
   min-height 100vh
-
   flex-direction column
 
   &__header
@@ -19,13 +19,10 @@ body
       font-size 50px
       text-align center
 
-
   &__content
     flex-grow 2
     padding 0 20px
     margin auto
-
-
 
   &__footer
     font-size 18px
@@ -41,7 +38,7 @@ body
       color #4C5FAC
       font-style normal
 
-
+ //ЦЕНТРАЛЬНЫЙ БЛОК
 .main
   display flex
 
@@ -60,22 +57,35 @@ body
     margin 0
     padding 0
   &__item
-    font-size 26px
-    box-shadow inset 0px -1px 0px 0px rgba(255,255,255,1);
-    border-top 1px solid #b8b8b8
-    height 62px
-    display flex
-    align-items center
-    padding 0 14px
-    white-space nowrap
-    transition background color 0.5s linear
 
-    &:hover
-      background #5A5A5A
-      color #fff
-      cursor pointer
+    label
+      font-size 26px
+      box-shadow inset 0px -1px 0px 0px rgba(255,255,255,1);
+      border-top 1px solid #b8b8b8
+      height 62px
+      display flex
+      align-items center
+      padding 0 14px
+      white-space nowrap
+      transition background color 0.5s linear
 
+      &:hover
+        background #5A5A5A
+        color #fff
+        cursor pointer
 
+[name="breed"]
+  display none
+
+//логика выбора пункта меню
+#breed-1:checked ~ .main__navigation [for="breed-1"],
+#breed-2:checked ~ .main__navigation [for="breed-2"],
+#breed-3:checked ~ .main__navigation [for="breed-3"],
+#breed-4:checked ~ .main__navigation [for="breed-4"]
+  background #5A5A5A
+  color #fff
+
+ //РЕЙТИНГ
 .rating
   background #D9D9D9
   padding 0 14px
@@ -124,7 +134,7 @@ body
     for num in (1..100)
       li[data-rating={'"'+num+'"'}] &
         width num+'%'
-
+     //логика отрисовки градиента
     [data-rating="10"] &,
     [data-rating="20"] &,
     [data-rating="30"] &,
@@ -160,7 +170,7 @@ body
   #rating:checked ~ .rating__list
     flex-direction column-reverse
 
-
+// СЕТКА С ШАБЛОНОМ
 .grid
   display grid
   grid-template-columns 1fr 1fr 1fr
@@ -187,6 +197,7 @@ body
   &__z
     grid-area z
 
+//КАРТИНКА С ПОДПИСЬЮ
 .figure
   margin 0
   position relative
@@ -219,3 +230,10 @@ body
 
     .figure:hover &
       opacity 1
+
+//ЛОГИКА ВЫБОРА ПОРОДЫ
+#breed-1:checked ~ .main__content [data-breed="breed-1"],
+#breed-2:checked ~ .main__content [data-breed="breed-2"],
+#breed-3:checked ~ .main__content [data-breed="breed-3"],
+#breed-4:checked ~ .main__content [data-breed="breed-4"]
+  opacity .3
